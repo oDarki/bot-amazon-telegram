@@ -53,7 +53,7 @@ def post_product():
 🔗 <a href="{affiliate_link}">Comprar agora</a>
 """
 
-    bot.send_photo(
+   await bot.send_photo(
         chat_id=CHANNEL_ID,
         photo=product["image"],
         caption=caption,
