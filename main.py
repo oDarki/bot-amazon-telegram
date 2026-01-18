@@ -1,4 +1,15 @@
 import os
+from telegram import Bot
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHANNEL_ID = os.getenv("CHANNEL_ID")
+
+bot = Bot(token=BOT_TOKEN)
+
+if os.getenv("STARTED") != "1":
+    bot.send_message(chat_id=CHANNEL_ID, text="🤖 Bot Amazon está online!")
+    os.environ["STARTED"] = "1"
+import os
 import asyncio
 from telegram import Bot
 from flask import Flask
